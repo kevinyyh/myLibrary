@@ -1,0 +1,28 @@
+td {
+    width: 130px;
+    height: 250px;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.addBook {
+    width: 150px;
+    height: 50px;
+}
+
+.mainContainer {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
