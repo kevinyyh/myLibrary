@@ -38,7 +38,7 @@ function displayLibrary() {
                 container.appendChild(pages);
                 pages.textContent = myLibrary[i * 5 + j].pages + " pages";
                 let hasRead = document.createElement("button");
-                hasRead.style.width = "60%";
+                hasRead.style.width = "50%";
                 container.appendChild(hasRead);
                 hasRead.textContent = myLibrary[i * 5 + j].hasRead ? "Read" : "Not Read";
                 hasRead.id = i * 5 + j;
