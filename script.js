@@ -37,20 +37,34 @@ function displayLibrary() {
                 let pages = document.createElement("div");
                 container.appendChild(pages);
                 pages.textContent = myLibrary[i * 5 + j].pages + " pages";
-                let hasRead = document.createElement("div");
+                let hasRead = document.createElement("button");
+                hasRead.style.width = "60%";
                 container.appendChild(hasRead);
-                hasRead.textContent = myLibrary[i * 5 + j].hasRead ? "has read" : "not read yet";
+                hasRead.textContent = myLibrary[i * 5 + j].hasRead ? "Read" : "Not Read";
+                hasRead.id = i * 5 + j;
+                hasRead.addEventListener("click", () => {
+                    if (hasRead.textContent === "Read") {
+                        hasRead.textContent = "Not Read";
+                        myLibrary[i*5+j].hasRead = false;
+                    } else {
+                        hasRead.textContent = "Read";
+                        myLibrary[i*5+j].hasRead = true;
+                    }
+                });
                 let removeButton = document.createElement("button");
                 removeButton.textContent = "remove";
+                removeButton.style.width = "50%";
                 container.appendChild(removeButton);
-                removeButton.style.marginTop = "20px";
                 removeButton.id = i * 5 + j;
                 removeButton.addEventListener("click", (e) => {
                     myLibrary.splice(parseInt(e.target.id), 1);
                     displayLibrary();
                 });
                 container.style.fontSize = "20px";
-                container.style.textAlign = "center";
+                container.style.display = "flex";
+                container.style.flexDirection = "column";
+                container.style.alignItems = "center";
+                container.style.gap = "5px";
                 cell.appendChild(container);
             }
         }
